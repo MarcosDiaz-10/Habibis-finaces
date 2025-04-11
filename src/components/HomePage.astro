@@ -1,0 +1,51 @@
+---
+import { CircleUser } from "@lucide/astro";
+---
+
+<div class="h-screen sm:rounded-lg sm:shadow-lg sm:p-4">
+    <main>
+        <header class="flex items-center justify-around px-5 py-2">
+            <h1 class="font-bold text-4xl py-2">Hola Marcos</h1>
+            <div><CircleUser size={70} /></div>
+        </header>
+
+        <section
+            class="grid grid-cols-2 mt-5 justify-items-center items-center"
+        >
+            <div
+                class="bg-[#ff84653d] text-left shadow-sm rounded-xl pl-4 pr-6 py-5"
+            >
+                <h2 class="font-semibold mb-2 text-gray-800">TASA PARALELO</h2>
+                <p class="font-bold text-2xl">BS.3.54</p>
+            </div>
+            <div
+                class="bg-green-100 w-max shadow-sm rounded-xl pl-5 pr-16 py-5"
+            >
+                <h2 class="font-semibold mb-2 text-gray-800">TASA BCV</h2>
+                <p class="font-bold text-2xl">BS.3.54</p>
+            </div>
+        </section>
+        <section class="flex mt-5 justify-center">
+            <div class="border bg-amber-300 h-[200px] w-[85%] rounded-2xl">
+                Grafico
+            </div>
+        </section>
+
+        <section
+            class="grid grid-cols-2 mt-5 justify-items-center items-center"
+        >
+            <div
+                class="bg-[#ff84653d] text-left shadow-sm rounded-xl pl-4 pr-6 py-5"
+            >
+                <h2 class="font-semibold mb-2 text-gray-800">TASA PARALELO</h2>
+                <p class="font-bold text-2xl">BS.3.54</p>
+            </div>
+            <div
+                class="bg-green-100 w-max shadow-sm rounded-xl pl-5 pr-16 py-5"
+            >
+                <h2 class="font-semibold mb-2 text-gray-800">TASA BCV</h2>
+                <p class="font-bold text-2xl">BS.3.54</p>
+            </div>
+        </section>
+    </main>
+</div>
