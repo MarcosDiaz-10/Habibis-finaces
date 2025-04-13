@@ -1,7 +1,27 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Chart from "../components/Chart.astro"
 ---
 
 <Layout>
-    <div>presupuesto</div>
+    <header>
+        <h1 class="font-bold text-4xl pl-4 py-2">Presupuestos</h1>
+    </header>
+    <section class='grid grid-cols-2 justify-items-center gap-2 mt-5'>
+        <Chart
+        title="TOTAL BS"
+        content="BS.1200"
+        className='bg-[#ff84653d] text-left shadow-sm rounded-xl pl-3 pr-10 py-5'  
+        />
+        <Chart
+    
+        title="TOTAL DOL"
+        content="$200"
+        className="bg-green-100 w-max shadow-sm rounded-xl pl-3 pr-10 py-5"
+        />
+    </section>
+    <h2 class="font-bold text-2xl py-2 pl-4 mt-4">Mis presupuestos</h2>
+    <section class="mt-2">
+
+    </section>
 </Layout>

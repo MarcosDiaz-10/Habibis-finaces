@@ -1,5 +1,7 @@
 ---
 import NavBar from "@/components/NavBar.astro";
+import { ClientRouter } from "astro:transitions";
+
 import "../styles/global.css";
 ---
 
@@ -20,6 +22,7 @@ import "../styles/global.css";
 			content="black-translucent"
 		/>
 		<title>HB Finances</title>
+		<ClientRouter/>
 		<script>
 			if ("serviceWorker" in navigator) {
 				navigator.serviceWorker.register("/sw.js");
