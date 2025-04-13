@@ -1,0 +1,17 @@
+---
+import clsx from "clsx";
+const { title, content, color, pl, pr, py } = Astro.props;
+---
+
+<div
+    style=`background-color:${color};`
+    class:list={[
+        "text-left shadow-sm rounded-xl",
+        "pl-" + pl,
+        "pr-" + pr,
+        "py-" + py,
+    ]}
+>
+    <h2 class="font-semibold mb-2 text-gray-800">{title}</h2>
+    <p class="font-bold text-2xl">{content}</p>
+</div>
