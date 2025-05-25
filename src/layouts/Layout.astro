@@ -22,14 +22,16 @@ import "../styles/global.css";
 			content="black-translucent"
 		/>
 		<title>HB Finances</title>
-		<ClientRouter/>
+		<ClientRouter />
 		<script>
 			if ("serviceWorker" in navigator) {
 				navigator.serviceWorker.register("/sw.js");
 			}
 		</script>
 	</head>
-	<body class="container bg-[#132233] sm:mx-auto sm:max-w-screen-md sm:p-2">
+	<body
+		class="container bg-azulClaroApp sm:mx-auto sm:max-w-screen-md sm:p-2"
+	>
 		<slot />
 		<NavBar />
 	</body>

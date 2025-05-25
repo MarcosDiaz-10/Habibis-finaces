@@ -1,10 +1,15 @@
 ---
 import { CalendarOfCalendar } from "@/components/CalendarOfCalendar";
 import Layout from "../layouts/Layout.astro";
+import UltimasTransacciones from "@/components/UltimasTransacciones.astro";
 ---
 
 <Layout>
+    <h1 class="text-4xl ml-2 mt-2 text-white">Calendario</h1>
     <section class="flex justify-center items-center mt-5">
         <CalendarOfCalendar client:load />
+    </section>
+    <section class="mt-5 px-2 pb-4">
+        <UltimasTransacciones />
     </section>
 </Layout>

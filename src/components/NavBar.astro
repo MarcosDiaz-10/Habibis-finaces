@@ -7,42 +7,72 @@ import {
     Plus,
     Wallet,
 } from "@lucide/astro";
+
+const currentPath = Astro.url.pathname;
+const navLinks = [
+    {
+        name: "Inicio",
+        href: "/",
+        icon: House,
+        iconsProps: {
+            color: "white",
+        },
+    },
+    {
+        name: "Presup",
+        href: "/Presupuesto",
+        icon: CreditCard,
+        iconsProps: {
+            color: "white",
+        },
+    },
+    {
+        name: "",
+        href: "/Agregar",
+        icon: Plus,
+        iconsProps: {
+            size: 50,
+        },
+    },
+    {
+        name: "Calendario",
+        href: "/Calendario",
+        icon: CalendarDays,
+        iconProps: {},
+    },
+    { name: "Totales", href: "/Totales", icon: Wallet, iconProps: {} },
+];
 ---
 
 <nav
-    class="fixed bottom-0 left-0 right-0 flex items-center justify-center bg-[#132233] text-white rounded-sm border-t border-[#101333] px-2 py-5"
+    class="fixed bottom-0 left-0 right-0 flex items-center justify-center bg-azulClaroApp text-white rounded-sm border-t border-[#101333] px-2 py-5"
 >
     <ul class="flex justify-between w-full">
-        <li class->
-            <a href="/" class="flex flex-col justify-center items-center pl-3"
-                ><House color="white" /> Inicio</a
-            >
-        </li>
-        <li>
-            <a
-                href="/Presupuesto"
-                class="flex flex-col justify-center items-center pl-3"
-                ><CreditCard color="white" /> Presup</a
-            >
-        </li>
-        <li>
-            <a
-                href="/Agregar"
-                class="flex flex-col justify-center items-center pl-3"
-                ><Plus size={50} />
-            </a>
-        </li>
-        <li>
-            <a
-                href="/Calendario"
-                class="flex flex-col justify-center items-center"
-                ><CalendarDays /> Calendario</a
-            >
-        </li>
-        <li>
-            <a href="/" class="flex flex-col justify-center items-center"
-                ><Wallet /> Totales</a
-            >
-        </li>
+        {
+            navLinks.map((link) => (
+                <li>
+                    <a
+                        href={link.href}
+                        class:list={[
+                            "flex flex-col justify-center items-center ml-3 p-1 rounded-md transition duration-300 ease-in-out",
+                            // Clases para el color del texto y hover, aplicadas al <a>
+                            "text-white hover:text-azulOscuroApp",
+                            // Clases para el estado activo, aplicadas al <a>
+                            {
+                                "bg-azulOscuroApp text-white shadow-md font-bold":
+                                    currentPath === link.href,
+                            },
+                        ]}
+                    >
+                        {link.icon && (
+                            <Fragment>
+                                <link.icon {...link.iconProps} />
+                            </Fragment>
+                        )}
+                        {link.name}
+                    </a>
+                </li>
+            ))
+        }
     </ul>
 </nav>

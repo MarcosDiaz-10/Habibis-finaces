@@ -1,0 +1,11 @@
+---
+import TabsTotales from "@/components/TabsTotales";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <h1 class="text-4xl ml-2 mt-2 text-white">Totales</h1>
+    <section class="flex justify-center">
+        <TabsTotales client:load />
+    </section>
+</Layout>
