@@ -9,31 +9,24 @@ import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-  prefetch: true,
-  output:'server',
+    prefetch: true,
+    output: 'server',
 
-  build: {
-      // Genera nombres de archivo predecibles para el cache
-      assetsPrefix: '/',
-      inlineStylesheets: 'never'
-  },
+    build: {
+        // Genera nombres de archivo predecibles para el cache
+        assetsPrefix: '/',
+        inlineStylesheets: 'never'
+    },
 
-  vite: {
+    vite: {
 
-      plugins: [tailwindcss()],
-      build: {
-          rollupOptions: {
-              output: {
-                  assetFileNames: 'assets/[name].[hash][extname]',
-                  entryFileNames: 'js/[name].[hash].js'
-              }
-          }
-      }
-  },
+        plugins: [tailwindcss()],
 
-  integrations: [react()],
+    },
 
-  adapter: node({
-    mode: 'standalone'
-  })
+    integrations: [react()],
+
+    adapter: node({
+        mode: 'standalone'
+    })
 });

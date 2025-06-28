@@ -3,6 +3,8 @@ import NavBar from "@/components/NavBar.astro";
 import { ClientRouter } from "astro:transitions";
 
 import "../styles/global.css";
+import "../styles/backgroud.css";
+// linear-gradient(15deg,  rgb(58 121 198 / 20%)  0 10% , rgb(192 58 250 / 20%) 90% 100% ), linear-gradient(#181835)
 ---
 
 <!doctype html>
@@ -17,6 +19,7 @@ import "../styles/global.css";
 		<link rel="manifest" href="/manifest.json" />
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<link rel="stylesheet" href="/src/styles/global.css" />
 		<meta
 			name="apple-mobile-web-app-status-bar-style"
 			content="black-translucent"
@@ -30,7 +33,7 @@ import "../styles/global.css";
 		</script>
 	</head>
 	<body
-		class="container bg-azulClaroApp sm:mx-auto sm:max-w-screen-md sm:p-2"
+		class="container backgroudBody h-[100vh] sm:mx-auto sm:max-w-screen-md sm:p-2"
 	>
 		<slot />
 		<NavBar />
