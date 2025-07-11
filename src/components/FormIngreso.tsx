@@ -115,7 +115,7 @@ export default function FormIngreso() {
               <FormControl>
                 <Input
                   type="text"
-                  className="bg-azulOscuroApp border-none text-white"
+                  className="bg-azulOscuroApp border-none text-white pb-20 pt-5"
                   placeholder="Descripción"
                   {...field}
                 />

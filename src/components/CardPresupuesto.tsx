@@ -22,7 +22,7 @@ export const CardPresupuesto = ({ title, className = '' }: { title: string, clas
     return (
         <Card className={clsx(className)}>
             <CardHeader className="flex w-full justify-between hover:cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
-                <CardTitle className="text-xl font-bold">
+                <CardTitle className="text-lg font-bold">
                     {title}
                 </CardTitle>
                 <ChevronRight className={clsx('transition-all easy-in', isOpen && "transform rotate-90")} />
@@ -34,7 +34,7 @@ export const CardPresupuesto = ({ title, className = '' }: { title: string, clas
                     isOpen && 'opacity-100 scale-y-100 h-auto')
                 }>Hola</div>
                 <div className="flex justify-end">
-                    <Button className="bg-azulClaroApp text-white">Ver Presupuesto</Button>
+                    <Button className="bg-azulClaroApp text-sm text-white">Ver Presupuesto</Button>
                 </div>
             </CardContent>
 

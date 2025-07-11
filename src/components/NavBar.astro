@@ -14,17 +14,13 @@ const navLinks = [
         name: "Inicio",
         href: "/",
         icon: House,
-        iconsProps: {
-            color: "white",
-        },
+        iconsProps: {},
     },
     {
         name: "Presup",
         href: "/Presupuesto",
         icon: CreditCard,
-        iconsProps: {
-            color: "white",
-        },
+        iconsProps: {},
     },
     {
         name: "",
@@ -42,12 +38,12 @@ const navLinks = [
     },
     { name: "Totales", href: "/Totales", icon: Wallet, iconProps: {} },
 ];
-
+import "../styles/backgroud.css";
 // bg-[#1c1c3a]
 ---
 
 <nav
-    class="fixed bottom-0 left-0 right-0 flex items-center justify-center text-white rounded-sm border-t border-[#101333] px-2 py-5"
+    class="fixed bottom-0 left-0 right-0 flex mt-10 items-center backgroundNavbar justify-center text-white rounded-sm border-t border-[#101333] px-2 py-5"
 >
     <ul class="flex justify-between w-full">
         {
@@ -58,17 +54,24 @@ const navLinks = [
                         class:list={[
                             "flex flex-col justify-center items-center ml-3 p-1 rounded-md transition duration-300 ease-in-out",
                             // Clases para el color del texto y hover, aplicadas al <a>
-                            "text-white hover:text-azulOscuroApp",
                             // Clases para el estado activo, aplicadas al <a>
                             {
-                                "bg-azulOscuroApp text-white shadow-md font-bold":
+                                " text-[#383881] font-bold":
                                     currentPath === link.href,
                             },
                         ]}
                     >
                         {link.icon && (
                             <Fragment>
-                                <link.icon {...link.iconProps} />
+                                <link.icon
+                                    class:list={[
+                                        {
+                                            "text-[#383881]":
+                                                currentPath === link.href,
+                                        },
+                                    ]}
+                                    {...link.iconProps}
+                                />
                             </Fragment>
                         )}
                         {link.name}

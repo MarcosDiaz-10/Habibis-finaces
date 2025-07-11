@@ -32,10 +32,10 @@ import "../styles/backgroud.css";
 			}
 		</script>
 	</head>
-	<body
-		class="container backgroudBody h-[100vh] sm:mx-auto sm:max-w-screen-md sm:p-2"
-	>
-		<slot />
+	<body class="container backgroudBody w-full sm:p-2">
+		<div class="mb-10">
+			<slot />
+		</div>
 		<NavBar />
 	</body>
 </html>

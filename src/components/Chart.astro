@@ -1,11 +1,9 @@
 ---
 import clsx from "clsx";
-const { title, content,className} = Astro.props;
+const { title, content, className } = Astro.props;
 ---
 
-<div
-    class={className}
->
-    <h2 class="font-semibold mb-2 ">{title}</h2>
-    <p class="font-bold text-2xl">{content}</p>
+<div class={className}>
+    <h2 class="text-[0.8rem]">{title}</h2>
+    <p class="font-bold text-[1rem]">{content}</p>
 </div>
