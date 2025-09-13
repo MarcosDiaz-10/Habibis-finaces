@@ -11,6 +11,7 @@ import node from '@astrojs/node';
 export default defineConfig({
     prefetch: true,
     output: 'server',
+    base: '/hbfinances',
 
     build: {
         // Genera nombres de archivo predecibles para el cache
