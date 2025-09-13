@@ -20,7 +20,15 @@ export default defineConfig({
     },
 
     vite: {
-
+        server: {
+            allowedHosts: [
+                'madehb.lat'
+            ],
+            // Opcional pero recomendado para servidores privados:
+            // Esto hace que el servidor escuche en todas las interfaces de red,
+            // no solo en localhost.
+            host: true,
+        },
         plugins: [tailwindcss()],
 
     },
