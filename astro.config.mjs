@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -12,12 +12,18 @@ export default defineConfig({
     prefetch: true,
     output: 'server',
     base: '/hbfinances',
-
-    build: {
-        // Genera nombres de archivo predecibles para el cache
-        assetsPrefix: '/',
-        inlineStylesheets: 'never'
+    env: {
+        schema: {
+            URL_API: envField.string({ access: 'public', context: 'client', default: 'http://localhost:8000' }),
+        }
     },
+    site: 'https://localhost:4321/hbfinances',
+
+    // build: {
+    //     // Genera nombres de archivo predecibles para el cache
+    //     assetsPrefix: '/',
+    //     inlineStylesheets: 'never'
+    // },
 
     vite: {
         server: {
