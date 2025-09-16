@@ -13,12 +13,14 @@ import Chart from "./Chart.astro";
 import "../styles/global.css";
 import UltimasTransacciones from "./UltimasTransacciones.astro";
 import { ChartDemo } from "./ChartDemo.tsx";
-import apiClient from "@/services/api";
+import { apiClientServer } from "@/services/api";
 
 const tasas = async () => {
     try {
-        const tasaBCV = apiClient.get("/api/hbfinances/scrapper/bcv");
-        const tasaParalelo = apiClient.get("/api/hbfinances/scrapper/binance");
+        const tasaBCV = apiClientServer.get("/api/hbfinances/scrapper/bcv");
+        const tasaParalelo = apiClientServer.get(
+            "/api/hbfinances/scrapper/binance",
+        );
 
         const [bcv, paralelo] = await Promise.all([tasaBCV, tasaParalelo]);
 

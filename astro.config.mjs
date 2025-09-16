@@ -14,7 +14,8 @@ export default defineConfig({
     base: '/hbfinances',
     env: {
         schema: {
-            URL_API: envField.string({ access: 'public', context: 'client', default: 'http://localhost:8000' }),
+            PUBLIC_URL_API_SERVER: envField.string({ access: 'public', context: 'server' }),
+            PUBLIC_URL_API_FRONT: envField.string({ access: 'public', context: 'client' }),
         }
     },
     site: 'https://localhost:4321/hbfinances',

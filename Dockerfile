@@ -10,4 +10,6 @@ RUN pnpm install
 
 COPY ./ ./
 
-CMD ["pnpm", "run", "dev", "--host"]
+RUN pnpm run build
+
+CMD ["pnpm", "astro", "preview", "--host"]
